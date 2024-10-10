@@ -45,7 +45,7 @@
             left: 0;
             z-index: -1;
         }
-        #startButton {
+        .game-button {
             font-size: 24px;
             padding: 15px 30px;
             margin-bottom: 15%;
@@ -62,12 +62,12 @@
             position: relative;
             overflow: hidden;
         }
-        #startButton:hover {
+        .game-button:hover {
             background-color: rgba(0, 200, 255, 0.9);
             box-shadow: 0 0 30px rgba(0, 200, 255, 0.7);
             transform: scale(1.05);
         }
-        #startButton::before {
+        .game-button::before {
             content: '';
             position: absolute;
             top: -50%;
@@ -78,7 +78,7 @@
             transform: rotate(45deg);
             transition: all 0.3s ease;
         }
-        #startButton:hover::before {
+        .game-button:hover::before {
             left: 100%;
         }
         #gameOverScreen {
@@ -92,28 +92,18 @@
             padding: 20px;
             border-radius: 10px;
         }
-        .button {
-            font-size: 24px;
-            padding: 10px 20px;
-            margin: 10px;
-            cursor: pointer;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-        }
     </style>
 </head>
 <body>
     <canvas id="gameCanvas"></canvas>
     <div id="startScreen">
         <img id="mainImage" alt="Miracle Defender">
-        <button id="startButton">Start Mission</button>
+        <button id="startButton" class="game-button">Start Mission</button>
     </div>
     <div id="gameOverScreen" style="display: none;">
         <h2>Game Over</h2>
         <p id="finalScore"></p>
-        <button id="restartButton" class="button">Restart Game</button>
+        <button id="restartButton" class="game-button">Restart Mission</button>
     </div>
     <script>
         const canvas = document.getElementById('gameCanvas');
